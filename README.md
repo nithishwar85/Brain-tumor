@@ -13,6 +13,8 @@ No → No tumor
 
 The images were extracted and prepared for training inside Google Colab.
 
+
+
 2. Data Preprocessing
 
 Each image was read using OpenCV and resized to 224×224 pixels, matching VGG16’s input requirements.
@@ -23,6 +25,8 @@ Labels were encoded into numerical values (0 = No tumor, 1 = Tumor) and then con
 
 Finally, the dataset was split into 67% training and 33% testing to evaluate performance.
 
+
+
 3. Transfer Learning with VGG16
 
 The VGG16 model, pre-trained on the ImageNet dataset, was used as the base.
@@ -30,6 +34,8 @@ The VGG16 model, pre-trained on the ImageNet dataset, was used as the base.
 The original classification layers were removed (include_top=False), keeping only the feature extraction layers.
 
 All base layers were frozen to preserve pre-trained weights, while new custom layers were added for tumor classification.
+
+
 
 4. Custom Layers
 
@@ -41,11 +47,16 @@ Dense layers with ReLU activation to learn deeper patterns.
 
 A final softmax layer for binary classification (Tumor vs No Tumor).
 
+
+
+
 5. Model Training
 
 The model was compiled with the Adam optimizer, categorical crossentropy loss, and accuracy as the evaluation metric.
 
 Training was performed for 5 epochs, with validation data used to track performance during training.
+
+
 
 6. Evaluation & Results
 
