@@ -15,6 +15,7 @@ The images were extracted and prepared for training inside Google Colab.
 
 
 
+
 2. Data Preprocessing
 
 Each image was read using OpenCV and resized to 224×224 pixels, matching VGG16’s input requirements.
@@ -24,6 +25,7 @@ The images were stored as input features (X) and assigned labels (y → Tumor or
 Labels were encoded into numerical values (0 = No tumor, 1 = Tumor) and then converted into categorical vectors.
 
 Finally, the dataset was split into 67% training and 33% testing to evaluate performance.
+
 
 
 
@@ -37,15 +39,14 @@ All base layers were frozen to preserve pre-trained weights, while new custom la
 
 
 
+
 4. Custom Layers
 
 On top of VGG16, additional layers were added:
-
 Global Average Pooling to reduce feature maps.
-
 Dense layers with ReLU activation to learn deeper patterns.
-
 A final softmax layer for binary classification (Tumor vs No Tumor).
+
 
 
 
@@ -53,15 +54,15 @@ A final softmax layer for binary classification (Tumor vs No Tumor).
 5. Model Training
 
 The model was compiled with the Adam optimizer, categorical crossentropy loss, and accuracy as the evaluation metric.
-
 Training was performed for 5 epochs, with validation data used to track performance during training.
+
+
 
 
 
 6. Evaluation & Results
 
 The training process recorded both accuracy and loss for training and validation sets.
-
 Graphs were plotted to visualize:
 
 Training vs. Validation Accuracy
