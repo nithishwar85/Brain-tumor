@@ -1,2 +1,7 @@
 # Brain-tumor
-With the use of deep learning to classify MRI-Brain scans which has images where tumor can be present nor absent. A pre-trained VGG16 model is applied The data set it then preprocessed 224×224 pixels.
+The Aim of the project is to classify MRI-scanned images into two categories:
+
+Yes → Brain tumor present
+No → No brain tumor
+
+It uses deep learning with CNNs (Convolutional Neural Networks) and applies learning with the VGG16 model (a pre-trained network on ImageNet).
